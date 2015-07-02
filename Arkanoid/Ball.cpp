@@ -5,6 +5,7 @@ Ball::Ball()
 {
 	this->x = SCREEN_WIDTH / 2;
 	this->y = 40;
+	this->speed = 0.4;
 
 	this->width = 30;
 	this->height = 30;
@@ -19,7 +20,18 @@ Ball::Ball()
 	sprite.setTexture(texture);
 }
 
-
+float Ball::getSpeed()
+{
+	return speed;
+}
+void Ball::randSpeed()
+{
+	speed=(rand()%10 )/10;
+}
+void Ball::setSpeed(float new_speed)
+{
+	speed = new_speed;
+}
 Ball::~Ball()
 {
 }

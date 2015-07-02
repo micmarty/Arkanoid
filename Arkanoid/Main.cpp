@@ -21,17 +21,20 @@ using namespace std;
 int main()
 {	
 	//	Objects declaration
-	
+	srand(time(NULL));
+
 	Paddle paddle(200,50);
 	Ball ball;
 	Stage level1;
+
 	std::vector<Brick*> brick;
 	for (int y = 0; y < 7; y++){
 		for (int x = 0; x < 10; x++)
 		{
-			brick.push_back(new Brick(x*85+100,y*45+100,1));
+			brick.push_back(new Brick(x*85+100,y*45+100,1,"red"));
 		}
 	}
+
 	RenderWindow window(VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Arkanoid");
 	
 	Keyboard keyboard;
@@ -53,12 +56,14 @@ int main()
 		if (paddle.getSprite().getGlobalBounds().intersects(ball.getSprite().getGlobalBounds()))
 		{
 			cout << "Collision" << endl;
-			ball.setY(ball.getY() - 600);
+			ball.setSpeed(-ball.getSpeed());
 		}
-		else
-			ball.setY(ball.getY() + 0.3);
-
+		
+		ball.setX(ball.getX() + 0.1);
+		ball.setY(ball.getY() + ball.getSpeed());
+		
 		window.clear(Color::White);
+		
 		
 		window.draw(level1.getSprite());
 		window.draw(paddle.getSprite());
