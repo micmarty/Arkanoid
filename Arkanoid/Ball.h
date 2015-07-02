@@ -1,27 +1,12 @@
 #pragma once
 #include<SFML\Graphics.hpp>
+#include"DrawableElement.h"
 using namespace sf;
 
-class Ball
+class Ball: public DrawableElement
 {
-private:
-	float x, y;
-
-	int diameter;
-
-	Texture texture;
-	Sprite sprite;
-
 public:
 	Ball();
 	~Ball();
-
-	float getX();
-	float getY();
-	int getDiameter();
-	Sprite getSprite();
-
-	void setX(float);
-	void setY(float);
 };
 

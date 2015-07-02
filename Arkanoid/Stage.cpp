@@ -17,5 +17,3 @@ Stage::Stage()
 Stage::~Stage()
 {
 }
-
-Sprite Stage::getBackground(){ return sprite; }

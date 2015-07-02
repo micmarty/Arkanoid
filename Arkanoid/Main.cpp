@@ -55,7 +55,7 @@ int main()
 
 		window.clear(Color::White);
 		
-		window.draw(level1.getBackground());
+		window.draw(level1.getSprite());
 		window.draw(paddle.getSprite());
 		window.draw(ball.getSprite());
 		window.draw(brick.getSprite());

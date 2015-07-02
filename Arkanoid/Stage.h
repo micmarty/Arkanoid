@@ -1,15 +1,13 @@
 #pragma once
 #include<SFML\Graphics.hpp>
+#include"DrawableElement.h"
 
 using namespace sf;
-class Stage
+
+class Stage: public DrawableElement
 {
-private:
-	Sprite sprite;
-	Texture texture;
 public:
 	Stage();
 	~Stage();
-	Sprite getBackground();
 };
 

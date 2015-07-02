@@ -17,9 +17,7 @@ Brick::Brick(float x, float y, int hits)
 	texture.setSmooth(true);
 	sprite.setTexture(texture);
 }
-
-
 Brick::~Brick()
 {
+
 }
-Sprite Brick::getSprite(){ return sprite; }
