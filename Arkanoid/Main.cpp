@@ -18,7 +18,6 @@
 using namespace sf;
 using namespace std;
 
-
 int main()
 {	
 	//	Objects declaration
@@ -26,7 +25,13 @@ int main()
 	Paddle paddle(200,50);
 	Ball ball;
 	Stage level1;
-	Brick brick(0, 0, 2);
+	std::vector<Brick*> brick;
+	for (int y = 0; y < 7; y++){
+		for (int x = 0; x < 10; x++)
+		{
+			brick.push_back(new Brick(x*85+100,y*45+100,1));
+		}
+	}
 	RenderWindow window(VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "Arkanoid");
 	
 	Keyboard keyboard;
@@ -58,7 +63,10 @@ int main()
 		window.draw(level1.getSprite());
 		window.draw(paddle.getSprite());
 		window.draw(ball.getSprite());
-		window.draw(brick.getSprite());
+		for(auto &b : brick){
+			window.draw(b->getSprite());
+		}
+
 		window.display();
 	}
 

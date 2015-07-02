@@ -5,9 +5,10 @@ Brick::Brick(float x, float y, int hits)
 {
 	this->x = x;
 	this->y = y;
+	
 
 	width = 80;
-	height = 50;
+	height = 40;
 	
 	hits_to_destroy = hits;
 	
@@ -16,6 +17,8 @@ Brick::Brick(float x, float y, int hits)
 
 	texture.setSmooth(true);
 	sprite.setTexture(texture);
+
+	sprite.setPosition(Vector2f(x, y));
 }
 Brick::~Brick()
 {
