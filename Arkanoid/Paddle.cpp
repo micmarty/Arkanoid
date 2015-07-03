@@ -5,6 +5,7 @@ Paddle::Paddle(int width, int height)
 {
 	this->x = SCREEN_WIDTH / 2;
 	this->y = SCREEN_HEIGHT - height;
+
 	this->speed = 0.5;
 
 	this->width = width;

@@ -4,10 +4,10 @@
 Ball::Ball()
 {
 	this->x = SCREEN_WIDTH / 2;
-	this->y = 40;
+	this->y = 0;
 
-	b_speed = speed(0.1, 0.4);
-
+	b_speed = speed(-0.6, 0);
+	randSpeed();
 	this->width = 30;
 	this->height = 30;
 
@@ -27,8 +27,7 @@ speed Ball::getSpeed()
 }
 void Ball::randSpeed()
 {
-	b_speed.x_speed = (rand() % 10 ) / 10;
-	b_speed.y_speed = (rand() % 10) / 10;
+	b_speed = speed((rand() % 20 - 10) / 10.0f, (rand() % 10) / 10.0f);
 }
 void Ball::setSpeed(speed new_speed)
 {

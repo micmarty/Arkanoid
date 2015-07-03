@@ -26,6 +26,8 @@ int main()
 	srand(time(NULL));
 
 	Paddle paddle(200,50);
+	paddle.setX(paddle.getX());
+	paddle.setY(paddle.getY());
 	Ball ball;
 	Stage level1;
 	std::vector<Brick*> brick;
